@@ -12,7 +12,7 @@ Cache should be used to decrease cost and increase performance not to solve them
 
 In AWS serverless world we have multiple level where we can cache:
 
-![picture](https://bitbucket.org/DanBranch/cache/downloads/cache.png)
+![picture](https://bitbucket.org/DanBranch/cache-chache-and-cache-some-more.../downloads/cache.png)
 
 The first place is CloudFront and his purpose is to reduce the number of requests to the origin.
 
@@ -31,7 +31,7 @@ The final stage is [DynamoDB DAX](https://docs.aws.amazon.com/amazondynamodb/lat
 
 ### What if I do not use serverless services? ###
 
-![picture](https://bitbucket.org/DanBranch/cache/downloads/cache2.png)
+![picture](https://bitbucket.org/DanBranch/cache-chache-and-cache-some-more.../downloads/cache2.png)
 
 CloudFront works also front of ALB and EC2 and is common to use [ElastiCache](https://aws.amazon.com/elasticache/) and you need to be aware of [caching strategies)(https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/Strategies.html) to use in your application.
 Because ElastiCache come in [two flavors](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html) you need to make sure to pick the right one. 
