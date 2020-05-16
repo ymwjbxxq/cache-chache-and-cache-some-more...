@@ -5,6 +5,7 @@ Speaking with few nerds friends of mine, we were sharing experiences and stories
 Adding cache and invalidation increase complexity and if we use it to hide problems like database queries, API calls that are too slow at some point they will bite us back. 
 
 Cache should be used to decrease cost and increase performance not to solve them and so before applying cache maybe we should answer:
+
 * Will cache reduce cost?
 * Will increase scalability and performance?
 * How stale data will affect the application?
