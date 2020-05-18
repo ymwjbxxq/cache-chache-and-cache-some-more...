@@ -27,7 +27,7 @@ The second place is [API Gateway](https://docs.aws.amazon.com/apigateway/latest/
 
 Third place is the [Lambda]( https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html) where we need to take advantage of execution context reuse
 
-The final stage is [DynamoDB DAX](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.concepts.html) and it should be transparent for your code but the Read Operations can return stale data and so TTL
+The final stage is [DynamoDB DAX](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.concepts.html) and it should be transparent for your code but the Read Operations can return stale data and so TTL needs to be configured.
 
 
 ### What if I do not use serverless services? ###
