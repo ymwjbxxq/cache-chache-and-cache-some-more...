@@ -1,21 +1,21 @@
 # CACHE CHACHE and CACHE some more… #
 
-Speaking with few nerds friends of mine, we were sharing experiences and stories and we end up maybe too much talking about cache and how many people (even us) apply cache without actually solving the problem behind. 
+Speaking with few nerds friends of mine, we were sharing experiences and stories and we end up maybe too much talking about cache and how many people (even us) apply cache without actually solving the problem behind it. 
 
 Adding cache and invalidation increase complexity and if we use it to hide problems like database queries, API calls that are too slow at some point they will bite us back. 
 
-Cache should be used to decrease cost and increase performance not to solve them and so before applying cache maybe we should answer:
+A cache should be used to decrease cost and increase performance not to solve them and so before applying cache maybe we should answer:
 
 * Will cache reduce cost?
 * Will increase scalability and performance?
 * How stale data will affect the application?
 * Do we need cache or just rewrite part of the application to make it more scalable and performant?
 
-In AWS serverless world we have multiple level where we can cache:
+In AWS serverless world we have multiple levels where we can cache:
 
 ![picture](https://bitbucket.org/DanBranch/cache-chache-and-cache-some-more.../downloads/cache.png)
 
-The first place is CloudFront and his purpose is to reduce the number of requests to the origin.
+The first place is CloudFront and its purpose is to reduce the number of requests to the origin.
 
 Cloufront can cache content based on:
 
@@ -35,10 +35,10 @@ The final stage is [DynamoDB DAX](https://docs.aws.amazon.com/amazondynamodb/lat
 ![picture](https://bitbucket.org/DanBranch/cache-chache-and-cache-some-more.../downloads/cache2.png)
 
 CloudFront works also together with ALB and EC2 and is common to use [ElastiCache](https://aws.amazon.com/elasticache/) and you need to be aware of [caching strategies](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/Strategies.html) to use in your application.
-Because ElastiCache come in [two flavors](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html) you need to make sure to pick the right one. 
+Because ElastiCache comes in [two flavours](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html) you need to make sure to pick the right one. 
 
-In the end of the day cache is extra complexity to manage and so we should not jump straight on it. If we are going on this road:
+At the end of the day, the cache is extra complexity to managing and so we should not jump straight on it. If we are going on this road:
 
-* We need always apply TTL even for few seconds in case you have unpredictable and rapidly changing data and cache is not only at one level but it is a multi-level matters
+* We need always apply TTL even for few seconds in case you have unpredictable and rapidly changing data and the cache is not only at one level but is a multi-level matter
 * Warm-up the cache, considering peak hours to ensure the CDN is given enough time to populate the cache
 * Test your application for [cluster resizing](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/best-practices-online-resharding.html)
